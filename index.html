@@ -1,82 +1,538 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pizza Paradise</title>
-<link rel="stylesheet" href="reset.css" />
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YANOT — Handcrafted Cosplay Props</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;0,900;1,700&family=Nunito:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<header>
-  <nav class="navbar">
-    <div class="logo">🍕 Pizza Paradise</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- ════ HEADER ════ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <div class="brand-icon">
+        <img src="icon.jpg" alt="Yanot">
+      </div>
+      <div>
+        <div class="brand-name">YANOT</div>
+        <div class="brand-sub" data-i18n="brand_sub">Handcrafted Props</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#about"      data-i18n="n_about">About</a>
+      <a href="#services"   data-i18n="n_services">Services</a>
+      <a href="#portfolio"  data-i18n="n_portfolio">Portfolio</a>
+      <a href="#commission" data-i18n="n_commission">Commission</a>
+      <a href="#faq"        data-i18n="n_faq">FAQ</a>
+      <a href="#contact"    data-i18n="n_contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="lang-sw">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <div class="lang-sep"></div>
+        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+        <div class="lang-sep"></div>
+        <button class="lang-btn" onclick="setLang('ro')">RO</button>
+      </div>
+      <a class="btn-primary" href="#commission" data-i18n="h_btn">Commission</a>
+    </div>
+  </div>
 </header>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-  <div class="hero-text">
-    <h1>Welcome to Pizza Paradise!</h1>
-    <p>Delicious pizzas delivered hot & fresh to your door.</p>
-    <a href="#menu" class="cta-button">Order Now 🍕</a>
+<!-- ════ HERO ════ -->
+<section class="hero" id="top">
+  <div class="particles"></div>
+  
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <div class="container hero-inner">
+
+    <!-- Text — no buttons here -->
+    <div class="hero-text">
+      <div class="hero-eyebrow animate d1">
+        <span class="eyebrow-line"></span>
+        <span class="kicker" style="margin:0" data-i18n="hero_kicker">Handcrafted Cosplay Props</span>
+      </div>
+
+      <h1 class="hero-title animate d2" data-i18n="hero_title">
+        Every prop.<br><em>Built by hand.</em><br>Built to impress.
+      </h1>
+
+      <p class="lead hero-lead animate d3" data-i18n="hero_desc">
+        Custom fantasy weapons, armor, helmets, and wigs — each piece shaped, finished, and scaled to you. No 3D printing. Ever.
+      </p>
+
+      <div class="hero-stats animate d4">
+        <div>
+          <div class="stat-num">3+</div>
+          <div class="stat-label" data-i18n="s1">Years Active</div>
+        </div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label" data-i18n="s2">Handmade</div>
+        </div>
+        <div>
+          <div class="stat-num">∞</div>
+          <div class="stat-label" data-i18n="s3">Custom Sizing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image: no card, no border, transparent bg blends with page -->
+    <div class="hero-image animate d3">
+      <div class="particles"></div>
+      <img class="hero-img" src="main.png" alt="Yanot — Handcrafted Props">
+
+      <div class="hero-pill">
+        <div class="pill-dot"></div>
+        <div>
+          <span class="pill-strong" data-i18n="pill_s">Commissions Open</span>
+          <span class="pill-sub"   data-i18n="pill_p">Inquire for availability</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- Menu Section -->
-<section id="menu" class="menu">
-  <h2>Our Menu</h2>
-  <div class="menu-items">
-    <div class="menu-item">
-      <img src="pizza1.webp" alt="Margherita Pizza">
-      <h3>Margherita</h3>
-      <p>Classic cheese and tomato pizza</p>
+<!-- ════ ABOUT ════ -->
+<section class="section about-section" id="about">
+  <div class="container about-inner">
+    <div class="about-label reveal">
+      <span class="kicker" data-i18n="ab_kicker">The Artist</span>
+      <h2>Yanot</h2>
     </div>
-    <div class="menu-item">
-      <img src="pizza2.jpeg" alt="Pepperoni Pizza">
-      <h3>Pepperoni</h3>
-      <p>Spicy pepperoni with mozzarella</p>
-    </div>
-    <div class="menu-item">
-      <img src="pizza3.webp" alt="Veggie Pizza">
-      <h3>Veggie Delight</h3>
-      <p>Loaded with fresh vegetables</p>
-    </div>
-    <div class="menu-item">
-      <img src="pizza4.webp" alt="BBQ Chicken Pizza">
-      <h3>BBQ Chicken</h3>
-      <p>Grilled chicken with BBQ sauce</p>
+    <div class="about-body reveal">
+      <p data-i18n="ab_p1">I'm a handcrafted cosplay prop maker and digital artist with over three years of active experience. Every sword, helmet, shield, and accessory is cut, shaped, assembled, and finished entirely by hand — no 3D printing, ever.</p>
+      <p data-i18n="ab_p2">Before any physical build begins I create a full 3D digital model to lock in proportions and structure, then I scale everything to your exact measurements — not the game's dimensions. Yours.</p>
+      <p data-i18n="ab_p3">Currently expanding into competitive cosplay and preparing for future contest participation.</p>
+      <div class="about-tags">
+        <span class="tag" data-i18n="t1">Fully Handmade</span>
+        <span class="tag" data-i18n="t2">No 3D Printing</span>
+        <span class="tag" data-i18n="t3">Custom Sizing</span>
+        <span class="tag" data-i18n="t4">Convention-Safe</span>
+        <span class="tag" data-i18n="t5">Int'l Shipping</span>
+        <span class="tag" data-i18n="t6">Competition-Grade</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="about">
-  <h2>About Us</h2>
-  <p>Pizza Paradise has been serving the community with fresh, hand-made pizzas since 2020. Our mission is to make every pizza experience unforgettable.</p>
+<!-- ════ SERVICES ════ -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="sv_kicker">What I Build</span>
+      <h2 data-i18n="sv_h2">Services</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="scard reveal">
+        <span class="snum">01</span>
+        <h3 data-i18n="sv1h">Weapons &amp; Props</h3>
+        <p data-i18n="sv1p">Fantasy weapons built to feel as real as they look.</p>
+        <div class="slist">
+          <span data-i18n="sv1i1">Swords &amp; dual blades</span>
+          <span data-i18n="sv1i2">Fantasy rifles</span>
+          <span data-i18n="sv1i3">Shields</span>
+          <span data-i18n="sv1i4">Custom fantasy designs</span>
+        </div>
+      </div>
+
+      <div class="scard reveal">
+        <span class="snum">02</span>
+        <h3 data-i18n="sv2h">Armor &amp; Helmets</h3>
+        <p data-i18n="sv2p">Structured, wearable pieces for cosplay and competition.</p>
+        <div class="slist">
+          <span data-i18n="sv2i1">Full helmet construction</span>
+          <span data-i18n="sv2i2">Partial armor components</span>
+          <span data-i18n="sv2i3">Decorative plating</span>
+          <span data-i18n="sv2i4">Wearable structured builds</span>
+        </div>
+      </div>
+
+      <div class="scard reveal">
+        <span class="snum">03</span>
+        <h3 data-i18n="sv3h">Costume Support</h3>
+        <p data-i18n="sv3p">Wigs, sewn elements, and add-ons to complete the look.</p>
+        <div class="slist">
+          <span data-i18n="sv3i1">Wig making &amp; styling</span>
+          <span data-i18n="sv3i2">Sewn costume elements</span>
+          <span data-i18n="sv3i3">Custom accessories</span>
+          <span data-i18n="sv3i4">Competition finishing</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>Want to order or ask a question? Reach out!</p>
-  <p>Email: info@pizzaparadise.com</p>
-  <p>Phone: +123 456 789</p>
-  <a href="mailto:info@pizzaparadise.com" class="cta-button">Send Email</a>
+<!-- ════ PORTFOLIO ════ -->
+<section class="section portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="pf_kicker">Selected Works</span>
+      <h2 data-i18n="pf_h2">Portfolio</h2>
+    </div>
+
+    <div class="port-grid reveal">
+      <div class="pitem">
+        <img src="helmet.png" alt="Custom Helmet">
+        <div class="povl"></div>
+        <div class="pinfo">
+          <div class="ptype" data-i18n="p1t">Armor</div>
+          <div class="pname" data-i18n="p1n">Custom Helmet</div>
+        </div>
+      </div>
+      <div class="pitem">
+        <img src="sword+rifle.png" alt="Sword and Rifle">
+        <div class="povl"></div>
+        <div class="pinfo">
+          <div class="ptype" data-i18n="p2t">Weapons</div>
+          <div class="pname" data-i18n="p2n">Sword &amp; Rifle Set</div>
+        </div>
+      </div>
+      <div class="pitem">
+        <img src="sword1.png" alt="Fantasy Sword">
+        <div class="povl"></div>
+        <div class="pinfo">
+          <div class="ptype" data-i18n="p3t">Weapon</div>
+          <div class="pname" data-i18n="p3n">Fantasy Sword</div>
+        </div>
+      </div>
+      <div class="pitem">
+        <img src="shield.png" alt="Fantasy Shield">
+        <div class="povl"></div>
+        <div class="pinfo">
+          <div class="ptype" data-i18n="p4t">Weapon</div>
+          <div class="pname" data-i18n="p4n">Fantasy Shield</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2026 Pizza Paradise. All rights reserved.</p>
+<!-- ════ COMMISSION ════ -->
+<section class="section commission-section" id="commission">
+  <div class="container com-inner">
+
+    <div class="com-text reveal">
+      <span class="kicker" data-i18n="cm_kicker">Ready to Build?</span>
+      <h2 data-i18n="cm_h2">Begin Your Commission</h2>
+      <p class="lead" style="margin-top:12px;" data-i18n="cm_desc">Tell me your character, deadline, and vision. I'll respond with availability and a project outline.</p>
+    </div>
+
+    <div class="com-form reveal">
+      <div class="form-row">
+        <div class="fgroup">
+          <label data-i18n="f_name">Full Name</label>
+          <input type="text" data-ph="f_nameph" placeholder="Your name">
+        </div>
+        <div class="fgroup">
+          <label data-i18n="f_email">Email</label>
+          <input type="email" data-ph="f_emailph" placeholder="your@email.com">
+        </div>
+      </div>
+      <div class="fstack">
+        <div class="form-row">
+          <div class="fgroup">
+            <label data-i18n="f_country">Country</label>
+            <input type="text" data-ph="f_countryph" placeholder="For shipping">
+          </div>
+          <div class="fgroup">
+            <label data-i18n="f_type">Commission Type</label>
+            <select>
+              <option data-i18n="fo0">Select…</option>
+              <option data-i18n="fo1">Weapon / Prop</option>
+              <option data-i18n="fo2">Helmet / Armor</option>
+              <option data-i18n="fo3">Wig</option>
+              <option data-i18n="fo4">Full Costume</option>
+              <option data-i18n="fo5">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label data-i18n="f_date">Event / Deadline</label>
+          <input type="text" data-ph="f_dateph" placeholder="Approximate date or convention name">
+        </div>
+        <div class="fgroup">
+          <label data-i18n="f_desc">Project Description</label>
+          <textarea rows="4" data-ph="f_descph" placeholder="Character, reference images, intended use…"></textarea>
+        </div>
+        <!-- Only button on page besides the header CTA -->
+        <button class="btn-primary btn-submit" data-i18n="f_submit">Submit Inquiry</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="fq_kicker">Questions</span>
+      <h2 data-i18n="fq_h2">Frequently Asked</h2>
+    </div>
+
+    <div class="faq-grid reveal">
+      <details class="fitem">
+        <summary><span data-i18n="q1">Do you 3D print your props?</span><span class="farrow">▾</span></summary>
+        <div class="fans" data-i18n="a1">No. Every build is entirely handmade — foam cut and shaped manually, composites layered by hand. No 3D-printed components, ever.</div>
+      </details>
+      <details class="fitem">
+        <summary><span data-i18n="q2">How does the build process work?</span><span class="farrow">▾</span></summary>
+        <div class="fans" data-i18n="a2">It starts with a consultation to align on character, references, and scale. I then take your measurements, build a full 3D digital model to verify proportions, and only then start the physical build — foam shaping, reinforcement, surface finishing, and paint work. Photos are sent for approval before delivery.</div>
+      </details>
+      <details class="fitem">
+        <summary><span data-i18n="q3">Can you scale a prop to my body size?</span><span class="farrow">▾</span></summary>
+        <div class="fans" data-i18n="a3">Yes — this is a core part of the process. Dimensions are adjusted to your measurements specifically, not the in-game or reference proportions.</div>
+      </details>
+      <details class="fitem">
+        <summary><span data-i18n="q4">How far in advance should I reach out?</span><span class="farrow">▾</span></summary>
+        <div class="fans" data-i18n="a4">It depends on complexity and current queue. Sooner is always better — include your event date so I can advise on availability.</div>
+      </details>
+      <details class="fitem">
+        <summary><span data-i18n="q5">Do you ship internationally?</span><span class="farrow">▾</span></summary>
+        <div class="fans" data-i18n="a5">Yes, depending on project size — with secure packaging and tracking. Include your country when inquiring.</div>
+      </details>
+      <details class="fitem">
+        <summary><span data-i18n="q6">How is pricing determined?</span><span class="farrow">▾</span></summary>
+        <div class="fans" data-i18n="a6">Every commission is custom. Pricing depends on size, complexity, detail level, and deadline. Submit an inquiry and I'll respond with a quote.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section class="section contact-section" id="contact">
+  <div class="container ct-inner">
+
+    <div class="ct-left reveal">
+      <span class="kicker" data-i18n="ct_kicker">Get In Touch</span>
+      <h2 data-i18n="ct_h2">Contact</h2>
+      <p data-i18n="ct_p">For commissions, questions, or collaborations — reach out via Instagram or email.</p>
+      <div class="channels">
+        <a class="channel" href="https://instagram.com/tseyanot" target="_blank">
+          <div class="ch-icon"> <img src="instagram-2.png" alt="Instagram"> </div>
+          <div>
+            <div class="ch-label" data-i18n="ch1l">Instagram</div>
+            <div class="ch-value">@tseyanot</div>
+          </div>
+        </a>
+        <a class="channel" href="mailto:might.beam@gmail.com">
+          <div class="ch-icon"> <img src="mail-2.png" alt="Email"> </div>
+          <div>
+            <div class="ch-label" data-i18n="ch2l">Email</div>
+            <div class="ch-value">might.beam@gmail.com</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="ct-right reveal">
+      <span class="kicker" data-i18n="ct2_kicker">Follow the Work</span>
+      <h2 data-i18n="ct2_h2">Stay Updated</h2>
+      <p data-i18n="ct2_p">Progress photos, behind-the-scenes builds, and finished pieces posted regularly on Instagram.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="ft-inner">
+      <div>
+        <div class="ft-brand">YANOT</div>
+        <div class="ft-tag" data-i18n="ft_tag">Handcrafted Cosplay Props & Custom Fantasy Builds</div>
+      </div>
+      <div class="ft-links">
+        <a href="#about"      data-i18n="n_about">About</a>
+        <a href="#services"   data-i18n="n_services">Services</a>
+        <a href="#portfolio"  data-i18n="n_portfolio">Portfolio</a>
+        <a href="#commission" data-i18n="n_commission">Commission</a>
+        <a href="#faq"        data-i18n="n_faq">FAQ</a>
+        <a href="#contact"    data-i18n="n_contact">Contact</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© <span id="yr"></span> YANOT — <span data-i18n="ft_rights">All rights reserved</span></div>
+      <div class="ft-copy" data-i18n="ft_sign">Every piece. Built by hand.</div>
+    </div>
+  </div>
 </footer>
 
+<script>
+/* scroll-reveal */
+document.getElementById('yr').textContent = new Date().getFullYear();
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+}), { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── translations ── */
+const T = {
+en:{
+  brand_sub:"Handcrafted Props",
+  n_about:"About",n_services:"Services",n_portfolio:"Portfolio",n_commission:"Commission",n_faq:"FAQ",n_contact:"Contact",
+  h_btn:"Commission",
+  hero_kicker:"Handcrafted Cosplay Props",
+  hero_title:"Every prop.<br><em>Built by hand.</em><br>Built to impress.",
+  hero_desc:"Custom fantasy weapons, armor, helmets, and wigs — each piece shaped, finished, and scaled to you. No 3D printing. Ever.",
+  s1:"Years Active",s2:"Handmade",s3:"Custom Sizing",
+  pill_s:"Commissions Open",pill_p:"Inquire for availability",
+  ab_kicker:"The Artist",
+  ab_p1:"I'm a handcrafted cosplay prop maker and digital artist with over three years of active experience. Every sword, helmet, shield, and accessory is cut, shaped, assembled, and finished entirely by hand — no 3D printing, ever.",
+  ab_p2:"Before any physical build begins I create a full 3D digital model to lock in proportions and structure, then I scale everything to your exact measurements — not the game's dimensions. Yours.",
+  ab_p3:"Currently expanding into competitive cosplay and preparing for future contest participation.",
+  t1:"Fully Handmade",t2:"No 3D Printing",t3:"Custom Sizing",t4:"Convention-Safe",t5:"Int'l Shipping",t6:"Competition-Grade",
+  sv_kicker:"What I Build",sv_h2:"Services",
+  sv1h:"Weapons & Props",sv1p:"Fantasy weapons built to feel as real as they look.",sv1i1:"Swords & dual blades",sv1i2:"Fantasy rifles",sv1i3:"Shields",sv1i4:"Custom fantasy designs",
+  sv2h:"Armor & Helmets",sv2p:"Structured, wearable pieces for cosplay and competition.",sv2i1:"Full helmet construction",sv2i2:"Partial armor components",sv2i3:"Decorative plating",sv2i4:"Wearable structured builds",
+  sv3h:"Costume Support",sv3p:"Wigs, sewn elements, and add-ons to complete the look.",sv3i1:"Wig making & styling",sv3i2:"Sewn costume elements",sv3i3:"Custom accessories",sv3i4:"Competition finishing",
+  pf_kicker:"Selected Works",pf_h2:"Portfolio",
+  p1t:"Armor",p1n:"Custom Helmet",p2t:"Weapons",p2n:"Sword & Rifle Set",p3t:"Weapon",p3n:"Fantasy Sword",p4t:"Weapon",p4n:"Fantasy Shield",
+  cm_kicker:"Ready to Build?",cm_h2:"Begin Your Commission",
+  cm_desc:"Tell me your character, deadline, and vision. I'll respond with availability and a project outline.",
+  f_name:"Full Name",f_nameph:"Your name",f_email:"Email",f_emailph:"your@email.com",
+  f_country:"Country",f_countryph:"For shipping",f_type:"Commission Type",
+  fo0:"Select…",fo1:"Weapon / Prop",fo2:"Helmet / Armor",fo3:"Wig",fo4:"Full Costume",fo5:"Other",
+  f_date:"Event / Deadline",f_dateph:"Approximate date or convention name",
+  f_desc:"Project Description",f_descph:"Character, reference images, intended use…",
+  f_submit:"Submit Inquiry",
+  fq_kicker:"Questions",fq_h2:"Frequently Asked",
+  q1:"Do you 3D print your props?",
+  a1:"No. Every build is entirely handmade — foam cut and shaped manually, composites layered by hand. No 3D-printed components, ever.",
+  q2:"How does the build process work?",
+  a2:"It starts with a consultation to align on character, references, and scale. I then take your measurements, build a full 3D digital model to verify proportions, and only then start the physical build — foam shaping, reinforcement, surface finishing, and paint work. Photos are sent for approval before delivery.",
+  q3:"Can you scale a prop to my body size?",
+  a3:"Yes — this is a core part of the process. Dimensions are adjusted to your measurements specifically, not the in-game or reference proportions.",
+  q4:"How far in advance should I reach out?",
+  a4:"It depends on complexity and current queue. Sooner is always better — include your event date so I can advise on availability.",
+  q5:"Do you ship internationally?",
+  a5:"Yes, depending on project size — with secure packaging and tracking. Include your country when inquiring.",
+  q6:"How is pricing determined?",
+  a6:"Every commission is custom. Pricing depends on size, complexity, detail level, and deadline. Submit an inquiry and I'll respond with a quote.",
+  ct_kicker:"Get In Touch",ct_h2:"Contact",ct_p:"For commissions, questions, or collaborations — reach out via Instagram or email.",
+  ch1l:"Instagram",ch2l:"Email",
+  ct2_kicker:"Follow the Work",ct2_h2:"Stay Updated",ct2_p:"Progress photos, behind-the-scenes builds, and finished pieces posted regularly on Instagram.",
+  ft_tag:"Handcrafted Cosplay Props & Custom Fantasy Builds",ft_rights:"All rights reserved",ft_sign:"Every piece. Built by hand."
+},
+ru:{
+  brand_sub:"Ручная Работа",
+  n_about:"Обо мне",n_services:"Услуги",n_portfolio:"Портфолио",n_commission:"Заказ",n_faq:"FAQ",n_contact:"Контакт",
+  h_btn:"Заказать",
+  hero_kicker:"Ручная работа · Косплей-реквизит",
+  hero_title:"Каждый реквизит.<br><em>Сделан вручную.</em><br>Создан впечатлять.",
+  hero_desc:"Оружие, броня, шлемы и парики на заказ — каждый элемент изготавливается и масштабируется под вас. Никакой 3D-печати. Никогда.",
+  s1:"Года опыта",s2:"Ручная работа",s3:"Под ваш размер",
+  pill_s:"Приём заказов открыт",pill_p:"Напишите для уточнения",
+  ab_kicker:"Мастер",
+  ab_p1:"Я — мастер косплей-реквизита и цифровой художник с более чем тремя годами активного опыта. Каждый меч, шлем, щит и аксессуар вырезан, собран и отделан полностью вручную — никакой 3D-печати.",
+  ab_p2:"Перед началом изготовления я создаю полную 3D-модель для проверки пропорций, затем масштабирую всё под ваши точные измерения — не игровые размеры. Ваши.",
+  ab_p3:"Сейчас расширяюсь в сторону конкурсного косплея и готовлюсь к будущим соревнованиям.",
+  t1:"Полностью вручную",t2:"Без 3D-печати",t3:"Под ваш размер",t4:"Безопасен для конвенций",t5:"Межд. доставка",t6:"Для соревнований",
+  sv_kicker:"Что я создаю",sv_h2:"Услуги",
+  sv1h:"Оружие и реквизит",sv1p:"Фэнтезийное оружие, которое выглядит и ощущается как настоящее.",sv1i1:"Мечи и двойные клинки",sv1i2:"Фэнтезийные ружья",sv1i3:"Щиты",sv1i4:"Авторские дизайны",
+  sv2h:"Броня и шлемы",sv2p:"Структурированные носимые элементы для косплея и соревнований.",sv2i1:"Изготовление шлемов",sv2i2:"Частичные элементы брони",sv2i3:"Декоративные пластины",sv2i4:"Носимые конструкции",
+  sv3h:"Костюмная поддержка",sv3p:"Парики, швейные элементы и аксессуары для завершения образа.",sv3i1:"Изготовление и стайлинг париков",sv3i2:"Швейные элементы",sv3i3:"Аксессуары на заказ",sv3i4:"Финишная отделка",
+  pf_kicker:"Избранные работы",pf_h2:"Портфолио",
+  p1t:"Броня",p1n:"Шлем на заказ",p2t:"Оружие",p2n:"Меч и ружьё",p3t:"Оружие",p3n:"Фэнтезийный меч",p4t:"Оружие",p4n:"Фэнтезийный щит",
+  cm_kicker:"Готовы начать?",cm_h2:"Оставить заявку",
+  cm_desc:"Расскажите о персонаже, сроках и идее. Я отвечу с информацией о доступности и планом проекта.",
+  f_name:"Полное имя",f_nameph:"Ваше имя",f_email:"Электронная почта",f_emailph:"ваш@email.com",
+  f_country:"Страна",f_countryph:"Для расчёта доставки",f_type:"Тип заказа",
+  fo0:"Выберите…",fo1:"Оружие / Реквизит",fo2:"Шлем / Броня",fo3:"Парик",fo4:"Полный костюм",fo5:"Другое",
+  f_date:"Дата мероприятия",f_dateph:"Примерная дата или название конвенции",
+  f_desc:"Описание проекта",f_descph:"Персонаж, референсы, назначение…",
+  f_submit:"Отправить заявку",
+  fq_kicker:"Вопросы",fq_h2:"Часто задаваемые",
+  q1:"Вы используете 3D-печать?",
+  a1:"Нет. Каждый элемент изготавливается полностью вручную — пена режется и формуется руками. Никаких напечатанных деталей.",
+  q2:"Как проходит процесс изготовления?",
+  a2:"Начинаем с консультации по персонажу, референсам и масштабу. Затем я беру ваши замеры, создаю 3D-модель для проверки пропорций и только потом начинаю физическую сборку — формовка, усиление, отделка, роспись. Фото перед доставкой.",
+  q3:"Можно ли масштабировать реквизит под мои параметры?",
+  a3:"Да — это ключевая часть процесса. Размеры адаптируются именно под ваши параметры, не игровые.",
+  q4:"Как заранее нужно обращаться?",
+  a4:"Зависит от сложности и очереди. Чем раньше — тем лучше. Укажите дату мероприятия при обращении.",
+  q5:"Вы отправляете за рубеж?",
+  a5:"Да, в зависимости от размера проекта — безопасная упаковка и трекинг. Укажите страну при обращении.",
+  q6:"Как формируется цена?",
+  a6:"Каждый заказ индивидуален. Цена зависит от размера, сложности и сроков. Отправьте заявку для оценки.",
+  ct_kicker:"Связаться",ct_h2:"Контакт",ct_p:"Для заказов, вопросов или сотрудничества — пишите в Instagram или на почту.",
+  ch1l:"Инстаграм",ch2l:"Эл. почта",
+  ct2_kicker:"Следите за работами",ct2_h2:"Будьте в курсе",ct2_p:"Фото прогресса, процесс изготовления и готовые работы регулярно публикуются в Instagram.",
+  ft_tag:"Ручная работа · Косплей-реквизит и Костюмы на заказ",ft_rights:"Все права защищены",ft_sign:"Каждый элемент. Сделан вручную."
+},
+ro:{
+  brand_sub:"Lucrat Manual",
+  n_about:"Despre",n_services:"Servicii",n_portfolio:"Portofoliu",n_commission:"Comandă",n_faq:"FAQ",n_contact:"Contact",
+  h_btn:"Comandă",
+  hero_kicker:"Accesorii Cosplay Lucrate Manual",
+  hero_title:"Fiecare recuzită.<br><em>Făcută manual.</em><br>Construită să impresioneze.",
+  hero_desc:"Arme fantastice, armuri, căști și peruci la comandă — fiecare piesă modelată, finisată și scalată pentru tine. Fără imprimare 3D. Niciodată.",
+  s1:"Ani activi",s2:"Lucrat manual",s3:"Dimensiuni personalizate",
+  pill_s:"Comenzi deschise",pill_p:"Scrie pentru disponibilitate",
+  ab_kicker:"Artistul",
+  ab_p1:"Sunt un creator de accesorii cosplay lucrate manual și artist digital cu peste trei ani de experiență activă. Fiecare sabie, cască, scut și accesoriu este tăiat, asamblat și finisat complet manual — fără imprimare 3D.",
+  ab_p2:"Înainte de orice construcție fizică, creez un model digital 3D complet pentru a verifica proporțiile, apoi adaptez totul după măsurătorile tale exacte — nu dimensiunile jocului. Ale tale.",
+  ab_p3:"În prezent mă extind spre cosplay competițional și mă pregătesc pentru viitoare concursuri.",
+  t1:"Lucrat integral manual",t2:"Fără imprimare 3D",t3:"Dimensiuni personalizate",t4:"Sigur la convenții",t5:"Livrare internațională",t6:"Nivel competițional",
+  sv_kicker:"Ce construiesc",sv_h2:"Servicii",
+  sv1h:"Arme și recuzită",sv1p:"Arme fantastice construite să arate și să se simtă reale.",sv1i1:"Săbii și lame duble",sv1i2:"Pușcă fantastică",sv1i3:"Scuturi",sv1i4:"Design-uri fantastice personalizate",
+  sv2h:"Armuri și căști",sv2p:"Piese structurate, purtabile, pentru cosplay și competiții.",sv2i1:"Construcție căști complete",sv2i2:"Componente parțiale de armură",sv2i3:"Plăci decorative",sv2i4:"Construcții structurate purtabile",
+  sv3h:"Suport costume",sv3p:"Peruci, elemente cusute și accesorii pentru a completa aspectul.",sv3i1:"Confecționare și stilizare peruci",sv3i2:"Elemente cusute",sv3i3:"Accesorii personalizate",sv3i4:"Finisare pentru competiții",
+  pf_kicker:"Lucrări selectate",pf_h2:"Portofoliu",
+  p1t:"Armură",p1n:"Cască personalizată",p2t:"Arme",p2n:"Set sabie & pușcă",p3t:"Armă",p3n:"Sabie fantastică",p4t:"Armă",p4n:"Scut fantastic",
+  cm_kicker:"Gata să construim?",cm_h2:"Începe comanda",
+  cm_desc:"Spune-mi personajul, termenul și viziunea ta. Îți voi răspunde cu disponibilitate și un plan de proiect.",
+  f_name:"Nume complet",f_nameph:"Numele tău",f_email:"Email",f_emailph:"email@exemplu.com",
+  f_country:"Țară",f_countryph:"Pentru livrare",f_type:"Tipul comenzii",
+  fo0:"Selectează…",fo1:"Armă / Recuzită",fo2:"Cască / Armură",fo3:"Perucă",fo4:"Costum complet",fo5:"Altele",
+  f_date:"Data evenimentului",f_dateph:"Dată aproximativă sau numele convenției",
+  f_desc:"Descrierea proiectului",f_descph:"Personaj, imagini de referință, utilizare dorită…",
+  f_submit:"Trimite solicitarea",
+  fq_kicker:"Întrebări",fq_h2:"Întrebări frecvente",
+  q1:"Folosești imprimare 3D?",
+  a1:"Nu. Fiecare construcție este complet manuală — spumă tăiată și modelată manual. Fără componente imprimate.",
+  q2:"Cum decurge procesul de construcție?",
+  a2:"Începem cu o consultare privind personajul, referințele și scala. Iau măsurătorile tale, creez un model 3D digital pentru a verifica proporțiile, apoi încep construcția fizică — modelare, armare, finisare, vopsire. Fotografii trimise înainte de livrare.",
+  q3:"Poți scala recuzita la dimensiunile mele?",
+  a3:"Da — aceasta este o parte esențială a procesului. Dimensiunile sunt ajustate specific pentru tine, nu după proporțiile din joc.",
+  q4:"Cu cât timp înainte ar trebui să contactez?",
+  a4:"Depinde de complexitate și coadă. Cu cât mai devreme, cu atât mai bine — include data evenimentului.",
+  q5:"Livrezi internațional?",
+  a5:"Da, în funcție de dimensiunea proiectului — ambalaj sigur și urmărire. Include țara când trimiți solicitarea.",
+  q6:"Cum se stabilește prețul?",
+  a6:"Fiecare comandă este personalizată. Prețul depinde de dimensiune, complexitate și termen. Trimite o solicitare pentru o estimare.",
+  ct_kicker:"Contactează-mă",ct_h2:"Contact",ct_p:"Pentru comenzi, întrebări sau colaborări — scrie pe Instagram sau email.",
+  ch1l:"Instagram",ch2l:"Email",
+  ct2_kicker:"Urmărește lucrările",ct2_h2:"Rămâi la curent",ct2_p:"Fotografii de progres, culise și piese finalizate postate regulat pe Instagram.",
+  ft_tag:"Recuzită Cosplay Lucrată Manual & Construcții Fantastice",ft_rights:"Toate drepturile rezervate",ft_sign:"Fiecare piesă. Construită manual."
+}};
+
+function setLang(lang) {
+  const t = T[lang]; if (!t) return;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (t[k] !== undefined) el.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-ph]').forEach(el => {
+    const k = el.dataset.ph;
+    if (t[k] !== undefined) el.placeholder = t[k];
+  });
+}
+</script>
 </body>
 </html>
