@@ -105,7 +105,7 @@ p {font-family:var(--fb);font-size:1rem;font-weight:400;line-height:1.78;color:v
   position:relative;
   min-height:88vh;
   display:flex;align-items:center;
-  padding:7px 0 10px;
+  padding:70px 0 50px;
   overflow:hidden;
 }
 
