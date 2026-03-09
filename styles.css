@@ -695,3 +695,122 @@ summary:hover{background:var(--surface2)}
     transform: translateY(-200px) translateX(-10px);
   }
 }
+.mascot {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9000;
+      width: 90px;
+      height: 90px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform-origin: bottom center;
+      /* enter pop, then idle loop */
+      animation:
+        mascot-enter 0.7s cubic-bezier(.34,1.56,.64,1) 3.5s forwards,
+        mascot-idle  6s ease-in-out 4.2s infinite;
+    }
+    .mascot.visible { pointer-events: auto; }
+
+    @keyframes mascot-enter {
+      from { opacity:0; transform: translateY(60px) rotate(15deg) scale(0.5); }
+      to   { opacity:1; transform: translateY(0) rotate(0deg) scale(1); }
+    }
+
+    /* Idle: gentle bounce most of the cycle, then a quick mirror-flip near the end */
+    @keyframes mascot-idle {
+      0%   { transform: translateY(0)    rotate(0deg)  scaleX(1);  }
+      10%  { transform: translateY(-8px) rotate(-3deg) scaleX(1);  }
+      20%  { transform: translateY(-3px) rotate(2deg)  scaleX(1);  }
+      32%  { transform: translateY(-7px) rotate(-2deg) scaleX(1);  }
+      44%  { transform: translateY(0)    rotate(0deg)  scaleX(1);  }
+      /* Hold normal, then quick mirror-flip at ~75% (≈4.5s into 6s cycle) */
+      72%  { transform: translateY(0)    rotate(0deg)  scaleX(1);  }
+      76%  { transform: translateY(-3px) rotate(0deg)  scaleX(-1); }
+      88%  { transform: translateY(0)    rotate(0deg)  scaleX(-1); }
+      92%  { transform: translateY(0)    rotate(0deg)  scaleX(1);  }
+      100% { transform: translateY(0)    rotate(0deg)  scaleX(1);  }
+    }
+
+    .mascot {
+  position: fixed;
+  display: inline-block;
+}
+
+.mascot-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--accent);
+  box-shadow: 0 8px 28px rgba(0,0,0,.55);
+  display: block;
+}
+
+.mascot:hover, .mascot-img {
+  animation: mascot-excited 0.35s ease infinite alternate;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes mascot-excited {
+  from { transform: scale(1.1) rotate(-5deg); box-shadow: 0 10px 30px rgba(0,0,0,.6); }
+  to   { transform: scale(1.14) rotate(5deg); box-shadow: 0 14px 36px rgba(0,0,0,.65), 0 0 0 6px rgba(212,135,156,.2); }
+}
+
+.mascot-bubble {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 16px 16px 4px 16px;
+  padding: 12px 15px;
+  width: 210px;
+
+  opacity: 0;
+  transform: translateY(8px) scale(0.92);
+  transform-origin: bottom right;
+
+  transition: opacity .28s ease, transform .28s ease;
+
+  pointer-events: auto; /* FIX */
+  box-shadow: 0 12px 32px rgba(0,0,0,.5);
+}
+
+/* show bubble when hovering mascot OR bubble */
+.mascot:hover, .mascot:hover .mascot-bubble{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.mascot-bubble-title {
+  font-family: var(--fd);
+  font-size: .76rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.mascot-bubble-text {
+  font-family: var(--fb);
+  font-size: .78rem;
+  font-weight: 400;
+  color: rgba(245,240,242,.75);
+  line-height: 1.55;
+}
+
+.mascot-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 18px;
+  width: 14px;
+  height: 8px;
+  background: var(--surface2);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  border-right: 1.5px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
+}
