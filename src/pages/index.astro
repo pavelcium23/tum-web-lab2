@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntryBySlug } from 'astro:content';
+
+const home = await getEntryBySlug('home', 'home');
+const fm = home?.data ?? {};
+---
+<BaseLayout title={fm.title ?? 'YANOT — Handcrafted Cosplay Props'}>
+  <main>
+    <section class="section hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <span class="kicker">{fm.hero_kicker}</span>
+          <h1 class="hero-title">{fm.hero_title}</h1>
+          <p class="hero-lead">{fm.hero_desc}</p>
+          <a class="btn btn-primary" href="#commission">{fm.hero_cta}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-inner">
+        <div>
+          <h2>{fm.about_title}</h2>
+          <p>{fm.about_desc}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="services-grid">
+          {fm.services.map((item) => (
+            <article class="scard">
+              <span class="snum">{item.title}</span>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          {fm.portfolio.map((item) => (
+            <article class="portfolio-item">
+              <img src={item.image} alt={item.title} />
+              <div class="pinfo">
+                <div class="ptype">{item.type}</div>
+                <div class="pname">{item.title}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section commission-section" id="commission">
+      <div class="container com-inner">
+        <div class="com-text">
+          <h2>{fm.commission_title}</h2>
+          <p class="lead">{fm.commission_desc}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq-grid">
+          {fm.faq.map((item) => (
+            <details class="fitem">
+              <summary>{item.q}</summary>
+              <div class="fans">{item.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="ft-brand">YANOT</div>
+        <div class="ft-tag">{fm.footer_text}</div>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>
