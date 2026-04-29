@@ -6,17 +6,20 @@ Create a web page for your/friends/relatives business (example: car-rent, cookie
 
 ## Customer requirements
 
-- Some form of navigation to sections (links, buttons)
-- Call to action
-- At least 4 sections ([see examples](https://webflow.com/blog/high-converting-landing-page))
-- Pleasant to the eyes
+- Migrate landing page to a Static Site Generator (Astro)
+- Integrate a Git-based CMS (Netlify CMS) for content editing
+- Ensure the CSS framework from Lab 3 is properly integrated (existing `styles.css` maintained as design baseline)
+- As much content as possible should be editable via CMS
+- Deploy the site live (Netlify or similar)
 
 ## Dev requirements
 
-- Use vanilla CSS and HTML (no frameworks)
-- Have a decent git history (no one commit)
-- The page should be deployed on a free hosting service (example: GitHub Pages, Vercel, Netlify)
-- Project repo should have a README with a short description of the landing page topic, screenshots, and a link to the live demo
+- Maintain decent git history (multiple atomic commits)
+- Keep existing responsive UI and design behavior
+- Add an Astro project structure with content folder and Markdown frontmatter
+- Add documentation for local dev and deployment
+- Provide a live admin interface at `/admin/`
+
 
 ## Other requirements:
 
