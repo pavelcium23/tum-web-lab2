@@ -1,3 +1,6 @@
+---
+// Admin CMS Page
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,13 +26,13 @@
             name: 'git-gateway',
             branch: 'main'
           },
-          media_folder: 'images',
+          media_folder: 'public/images',
           public_folder: '/images',
           collections: [
             {
               name: 'home',
               label: 'Home Content',
-              file: 'src/content/home.md',
+              file: 'src/content/home/home.md',
               fields: [
                 { name: 'title', label: 'Page Title', widget: 'string' },
                 { name: 'hero_kicker', label: 'Hero Kicker', widget: 'string' },
