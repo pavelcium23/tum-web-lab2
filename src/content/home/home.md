@@ -39,8 +39,6 @@ faq:
   - q: How does the build process work?
     a: It starts with a consultation, measurement, digital model, then physical
       build with progress updates.
-  - q: do u drink
-    a: yes pls
 footer_text: Handcrafted Cosplay Props & Custom Fantasy Builds
 ---
 
