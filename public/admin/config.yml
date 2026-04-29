@@ -8,34 +8,37 @@ public_folder: "/images"
 collections:
   - name: "home"
     label: "Home Content"
-    file: "src/content/home/home.md"
-    fields:
-      - { name: "title", label: "Page Title", widget: "string" }
-      - { name: "hero_kicker", label: "Hero Kicker", widget: "string" }
-      - { name: "hero_title", label: "Hero Title", widget: "string" }
-      - { name: "hero_desc", label: "Hero Description", widget: "text" }
-      - { name: "hero_cta", label: "Hero CTA", widget: "string" }
-      - { name: "about_title", label: "About Title", widget: "string" }
-      - { name: "about_desc", label: "About Description", widget: "text" }
-      - name: "services"
-        label: "Services"
-        widget: "list"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/content/home/home.md"
         fields:
-          - { name: "title", label: "Service Title", widget: "string" }
-          - { name: "description", label: "Service Description", widget: "text" }
-      - name: "portfolio"
-        label: "Portfolio Items"
-        widget: "list"
-        fields:
-          - { name: "title", label: "Item Title", widget: "string" }
-          - { name: "type", label: "Item Type", widget: "string" }
-          - { name: "image", label: "Image Path", widget: "image" }
-      - { name: "commission_title", label: "Commission Title", widget: "string" }
-      - { name: "commission_desc", label: "Commission Description", widget: "text" }
-      - name: "faq"
-        label: "FAQ"
-        widget: "list"
-        fields:
-          - { name: "q", label: "Question", widget: "string" }
-          - { name: "a", label: "Answer", widget: "text" }
-      - { name: "footer_text", label: "Footer Text", widget: "string" }
+          - { name: "title", label: "Page Title", widget: "string" }
+          - { name: "hero_kicker", label: "Hero Kicker", widget: "string" }
+          - { name: "hero_title", label: "Hero Title", widget: "string" }
+          - { name: "hero_desc", label: "Hero Description", widget: "text" }
+          - { name: "hero_cta", label: "Hero CTA", widget: "string" }
+          - { name: "about_title", label: "About Title", widget: "string" }
+          - { name: "about_desc", label: "About Description", widget: "text" }
+          - name: "services"
+            label: "Services"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Service Title", widget: "string" }
+              - { name: "description", label: "Service Description", widget: "text" }
+          - name: "portfolio"
+            label: "Portfolio Items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Item Title", widget: "string" }
+              - { name: "type", label: "Item Type", widget: "string" }
+              - { name: "image", label: "Image Path", widget: "image" }
+          - { name: "commission_title", label: "Commission Title", widget: "string" }
+          - { name: "commission_desc", label: "Commission Description", widget: "text" }
+          - name: "faq"
+            label: "FAQ"
+            widget: "list"
+            fields:
+              - { name: "q", label: "Question", widget: "string" }
+              - { name: "a", label: "Answer", widget: "text" }
+          - { name: "footer_text", label: "Footer Text", widget: "string" }
