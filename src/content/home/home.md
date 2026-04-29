@@ -19,7 +19,7 @@ services:
 portfolio:
   - title: "Custom Helmet"
     type: "Armor"
-    image: "/shield.png"
+    image: "/helmet.png"
   - title: "Sword & Rifle Set"
     type: "Weapons"
     image: "/sword+rifle.png"

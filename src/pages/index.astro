@@ -6,86 +6,351 @@ const home = await getEntryBySlug('home', 'home');
 const fm = home?.data ?? {};
 ---
 <BaseLayout title={fm.title ?? 'YANOT — Handcrafted Cosplay Props'}>
-  <main>
-    <section class="section hero" id="top">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <span class="kicker">{fm.hero_kicker}</span>
-          <h1 class="hero-title">{fm.hero_title}</h1>
-          <p class="hero-lead">{fm.hero_desc}</p>
-          <a class="btn btn-primary" href="#commission">{fm.hero_cta}</a>
-        </div>
-      </div>
-    </section>
 
-    <section class="section about-section" id="about">
-      <div class="container about-inner">
+<!-- ════ MASCOT ════ -->
+<div class="mascot" id="mascot-br">
+  <img class="mascot-img" src="/icon.jpg" alt="Yanot Mascot">
+  <div class="mascot-bubble">
+    <div class="mascot-bubble-title">Hey! Ready to build?</div>
+    <div class="mascot-bubble-text">Got a prop in mind? I'd love to make it for you. Every piece is fully handmade — no 3D printing!</div>
+  </div>
+</div>
+
+<!-- ════ HEADER ════ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <div class="brand-icon">
+        <img src="/icon.jpg" alt="Yanot">
+      </div>
+      <div>
+        <div class="brand-name">YANOT</div>
+        <div class="brand-sub">Handcrafted Props</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#commission">Commission</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <a class="btn-primary" href="#commission">{fm.hero_cta ?? 'Commission'}</a>
+    </div>
+
+    <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#about"      id="mnAbout">About</a>
+    <a href="#services"   id="mnServices">Services</a>
+    <a href="#portfolio"  id="mnPortfolio">Portfolio</a>
+    <a href="#commission" id="mnCommission">Commission</a>
+    <a href="#faq"        id="mnFaq">FAQ</a>
+    <a href="#contact"    id="mnContact">Contact</a>
+  </nav>
+</header>
+
+<!-- ════ MOBILE-ONLY BANNER ════ -->
+<section class="mobile-banner-section mobile-only" aria-label="Mobile highlight">
+  <div class="container">
+    <div class="mobile-banner-inner">
+      <div class="mobile-banner-icon">✦</div>
+      <div class="mobile-banner-text">
+        <span class="kicker">Handcrafted · No 3D Printing · Ever</span>
+        <h3>Commissions Open Now</h3>
+        <p>Custom props built to your exact measurements. Scroll down to see the work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HERO ════ -->
+<section class="hero" id="top">
+  <div class="particles"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow animate d1">
+        <span class="eyebrow-line"></span>
+        <span class="kicker" style="margin:0">{fm.hero_kicker ?? 'Handcrafted Cosplay Props'}</span>
+      </div>
+
+      <h1 class="hero-title animate d2" set:html={fm.hero_title ?? 'Every prop.<br><em>Built by hand.</em><br>Built to impress.'} />
+
+      <p class="lead hero-lead animate d3">{fm.hero_desc ?? 'Custom fantasy weapons, armor, helmets, and wigs — each piece shaped, finished, and scaled to you. No 3D printing. Ever.'}</p>
+
+      <div class="hero-stats animate d4">
         <div>
-          <h2>{fm.about_title}</h2>
-          <p>{fm.about_desc}</p>
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years Active</div>
+        </div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Handmade</div>
+        </div>
+        <div>
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Custom Sizing</div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="section services-section" id="services">
-      <div class="container">
-        <h2>Services</h2>
-        <div class="services-grid">
-          {fm.services.map((item) => (
-            <article class="scard">
-              <span class="snum">{item.title}</span>
-              <p>{item.description}</p>
-            </article>
-          ))}
+    <div class="hero-image animate d3">
+      <div class="particles"></div>
+      <img class="hero-img" src="/main.png" alt="Yanot — Handcrafted Props">
+      <div class="hero-pill">
+        <div class="pill-dot"></div>
+        <div>
+          <span class="pill-strong">Commissions Open</span>
+          <span class="pill-sub">Inquire for availability</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="section portfolio-section" id="portfolio">
-      <div class="container">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-          {fm.portfolio.map((item) => (
-            <article class="portfolio-item">
-              <img src={item.image} alt={item.title} />
-              <div class="pinfo">
-                <div class="ptype">{item.type}</div>
-                <div class="pname">{item.title}</div>
-              </div>
-            </article>
-          ))}
+<!-- ════ ABOUT ════ -->
+<section class="section about-section" id="about">
+  <div class="container about-inner">
+    <div class="about-label reveal">
+      <span class="kicker">The Artist</span>
+      <h2>{fm.about_title ?? 'Yanot'}</h2>
+    </div>
+    <div class="about-body reveal">
+      <p>{fm.about_desc ?? ''}</p>
+      <div class="about-tags">
+        <span class="tag">Fully Handmade</span>
+        <span class="tag">No 3D Printing</span>
+        <span class="tag">Custom Sizing</span>
+        <span class="tag">Convention-Safe</span>
+        <span class="tag">Int'l Shipping</span>
+        <span class="tag">Competition-Grade</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SERVICES ════ -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">What I Build</span>
+      <h2>Services</h2>
+    </div>
+    <div class="services-grid">
+      {(fm.services ?? []).map((item: { title: string; description: string }, i: number) => (
+        <div class="scard reveal">
+          <span class="snum">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ PORTFOLIO ════ -->
+<section class="section portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Selected Works</span>
+      <h2>Portfolio</h2>
+    </div>
+    <div class="port-grid reveal">
+      {(fm.portfolio ?? []).map((item: { title: string; type: string; image: string }) => (
+        <div class="pitem">
+          <img src={item.image} alt={item.title} />
+          <div class="povl"></div>
+          <div class="pinfo">
+            <div class="ptype">{item.type}</div>
+            <div class="pname">{item.title}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ COMMISSION ════ -->
+<section class="section commission-section" id="commission">
+  <div class="container com-inner">
+    <div class="com-text reveal">
+      <span class="kicker">Ready to Build?</span>
+      <h2>{fm.commission_title ?? 'Begin Your Commission'}</h2>
+      <p class="lead" style="margin-top:12px;">{fm.commission_desc ?? 'Tell me your character, deadline, and vision. I\'ll respond with availability and a project outline.'}</p>
+    </div>
+
+    <div class="com-form reveal">
+      <div class="form-row">
+        <div class="fgroup">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="fgroup">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com">
         </div>
       </div>
-    </section>
-
-    <section class="section commission-section" id="commission">
-      <div class="container com-inner">
-        <div class="com-text">
-          <h2>{fm.commission_title}</h2>
-          <p class="lead">{fm.commission_desc}</p>
+      <div class="fstack">
+        <div class="form-row">
+          <div class="fgroup">
+            <label>Country</label>
+            <input type="text" placeholder="For shipping">
+          </div>
+          <div class="fgroup">
+            <label>Commission Type</label>
+            <select>
+              <option>Select…</option>
+              <option>Weapon / Prop</option>
+              <option>Helmet / Armor</option>
+              <option>Wig</option>
+              <option>Full Costume</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section faq-section" id="faq">
-      <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq-grid">
-          {fm.faq.map((item) => (
-            <details class="fitem">
-              <summary>{item.q}</summary>
-              <div class="fans">{item.a}</div>
-            </details>
-          ))}
+        <div class="fgroup">
+          <label>Event / Deadline</label>
+          <input type="text" placeholder="Approximate date or convention name">
         </div>
+        <div class="fgroup">
+          <label>Project Description</label>
+          <textarea rows="4" placeholder="Character, reference images, intended use…"></textarea>
+        </div>
+        <button class="btn-primary btn-submit">Submit Inquiry</button>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <footer class="site-footer">
-      <div class="container">
+<!-- ════ FAQ ════ -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Questions</span>
+      <h2>Frequently Asked</h2>
+    </div>
+    <div class="faq-grid reveal">
+      {(fm.faq ?? []).map((item: { q: string; a: string }) => (
+        <details class="fitem">
+          <summary><span>{item.q}</span><span class="farrow">▾</span></summary>
+          <div class="fans">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section class="section contact-section" id="contact">
+  <div class="container ct-inner">
+    <div class="ct-left reveal">
+      <span class="kicker">Get In Touch</span>
+      <h2>Contact</h2>
+      <p>For commissions, questions, or collaborations — reach out via Instagram or email.</p>
+      <div class="channels">
+        <a class="channel" href="https://instagram.com/tseyanot" target="_blank" rel="noopener">
+          <div class="ch-icon"><img src="/instagram-2.png" alt="Instagram"></div>
+          <div>
+            <div class="ch-label">Instagram</div>
+            <div class="ch-value">@tseyanot</div>
+          </div>
+        </a>
+        <a class="channel" href="mailto:yanot.cosplay@gmail.com">
+          <div class="ch-icon"><img src="/mail-2.png" alt="Email"></div>
+          <div>
+            <div class="ch-label">Email</div>
+            <div class="ch-value">yanot.cosplay@gmail.com</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="ct-right reveal">
+      <span class="kicker">Follow the Work</span>
+      <h2>Stay Updated</h2>
+      <p>Progress photos, behind-the-scenes builds, and finished pieces posted regularly on Instagram.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="ft-inner">
+      <div>
         <div class="ft-brand">YANOT</div>
-        <div class="ft-tag">{fm.footer_text}</div>
+        <div class="ft-tag">{fm.footer_text ?? 'Handcrafted Cosplay Props & Custom Fantasy Builds'}</div>
       </div>
-    </footer>
-  </main>
+      <div class="ft-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#commission">Commission</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© <span id="yr"></span> YANOT — All rights reserved</div>
+      <div class="ft-copy">Every piece. Built by hand.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ MOBILE CTA BAR ════ -->
+<div class="mobile-cta-bar" id="mobileCta">
+  <div class="cta-text">
+    <strong>Commissions Open</strong>
+    <span>Inquire for availability</span>
+  </div>
+  <a class="btn-primary" href="#commission">{fm.hero_cta ?? 'Commission'}</a>
+</div>
+
+<script is:inline>
+/* year */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* scroll-reveal */
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+}), { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* mascot */
+const mascot = document.getElementById('mascot-br');
+setTimeout(() => {
+  mascot.classList.add('visible');
+  requestAnimationFrame(() => requestAnimationFrame(() => mascot.classList.add('idle')));
+}, 4200);
+
+/* mobile nav hamburger */
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  menuBtn.classList.toggle('open', isOpen);
+  menuBtn.setAttribute('aria-expanded', isOpen);
+});
+
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+  menuBtn.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', false);
+}
+
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+</script>
+
 </BaseLayout>
