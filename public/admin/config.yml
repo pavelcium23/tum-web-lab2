@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master
 
 media_folder: "images"
 public_folder: "/images"
@@ -8,7 +8,7 @@ public_folder: "/images"
 collections:
   - name: "home"
     label: "Home Content"
-    file: "src/content/home.md"
+    file: "src/content/home/home.md"
     fields:
       - { name: "title", label: "Page Title", widget: "string" }
       - { name: "hero_kicker", label: "Hero Kicker", widget: "string" }
