@@ -39,6 +39,13 @@ const fm = home?.data ?? {};
     </nav>
 
     <div class="header-right">
+      <div class="lang-sw">
+        <button class="lang-btn active">EN</button>
+        <div class="lang-sep"></div>
+        <button class="lang-btn">RU</button>
+        <div class="lang-sep"></div>
+        <button class="lang-btn">RO</button>
+      </div>
       <a class="btn-primary" href="#commission">{fm.hero_cta ?? 'Commission'}</a>
     </div>
 
@@ -85,7 +92,9 @@ const fm = home?.data ?? {};
         <span class="kicker" style="margin:0">{fm.hero_kicker ?? 'Handcrafted Cosplay Props'}</span>
       </div>
 
-      <h1 class="hero-title animate d2" set:html={fm.hero_title ?? 'Every prop.<br><em>Built by hand.</em><br>Built to impress.'} />
+      <h1 class="hero-title animate d2">
+        Every prop.<br /><em>Built by hand.</em><br />Built to impress.
+      </h1>
 
       <p class="lead hero-lead animate d3">{fm.hero_desc ?? 'Custom fantasy weapons, armor, helmets, and wigs — each piece shaped, finished, and scaled to you. No 3D printing. Ever.'}</p>
 
@@ -124,10 +133,12 @@ const fm = home?.data ?? {};
   <div class="container about-inner">
     <div class="about-label reveal">
       <span class="kicker">The Artist</span>
-      <h2>{fm.about_title ?? 'Yanot'}</h2>
+      <h2>Yanot</h2>
     </div>
     <div class="about-body reveal">
-      <p>{fm.about_desc ?? ''}</p>
+      <p>I'm a handcrafted cosplay prop maker and digital artist with over three years of active experience. Every sword, helmet, shield, and accessory is cut, shaped, assembled, and finished entirely by hand — no 3D printing, ever.</p>
+      <p>Before any physical build begins I create a full 3D digital model to lock in proportions and structure, then I scale everything to your exact measurements — not the game's dimensions. Yours.</p>
+      <p>Currently expanding into competitive cosplay and preparing for future contest participation.</p>
       <div class="about-tags">
         <span class="tag">Fully Handmade</span>
         <span class="tag">No 3D Printing</span>
@@ -148,13 +159,39 @@ const fm = home?.data ?? {};
       <h2>Services</h2>
     </div>
     <div class="services-grid">
-      {(fm.services ?? []).map((item: { title: string; description: string }, i: number) => (
-        <div class="scard reveal">
-          <span class="snum">{String(i + 1).padStart(2, '0')}</span>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
+      <div class="scard reveal">
+        <span class="snum">01</span>
+        <h3>Weapons &amp; Props</h3>
+        <p>Fantasy weapons built to feel as real as they look.</p>
+        <div class="slist">
+          <span>Swords &amp; dual blades</span>
+          <span>Fantasy rifles</span>
+          <span>Shields</span>
+          <span>Custom fantasy designs</span>
         </div>
-      ))}
+      </div>
+      <div class="scard reveal">
+        <span class="snum">02</span>
+        <h3>Armor &amp; Helmets</h3>
+        <p>Structured, wearable pieces for cosplay and competition.</p>
+        <div class="slist">
+          <span>Full helmet construction</span>
+          <span>Partial armor components</span>
+          <span>Decorative plating</span>
+          <span>Wearable structured builds</span>
+        </div>
+      </div>
+      <div class="scard reveal">
+        <span class="snum">03</span>
+        <h3>Costume Support</h3>
+        <p>Wigs, sewn elements, and add-ons to complete the look.</p>
+        <div class="slist">
+          <span>Wig making &amp; styling</span>
+          <span>Sewn costume elements</span>
+          <span>Custom accessories</span>
+          <span>Competition finishing</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -186,7 +223,7 @@ const fm = home?.data ?? {};
   <div class="container com-inner">
     <div class="com-text reveal">
       <span class="kicker">Ready to Build?</span>
-      <h2>{fm.commission_title ?? 'Begin Your Commission'}</h2>
+      <h2>Begin Your Commission</h2>
       <p class="lead" style="margin-top:12px;">{fm.commission_desc ?? 'Tell me your character, deadline, and vision. I\'ll respond with availability and a project outline.'}</p>
     </div>
 
